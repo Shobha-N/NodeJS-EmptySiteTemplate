@@ -57,26 +57,7 @@
         ],
         "tags": {
             "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
-        },
-        "properties": {
-            "serverFarmId": "[parameters('hostingPlanName')]",
-            "siteConfig": {
-              "appSettings": []
-            },
-        
-        "resources": [{
-            "apiVersion": "2015-08-01",
-            "name": "web",
-            "type": "sourcecontrols",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
-            ],
-            "properties": {
-                "RepoUrl": "[parameters('repoUrl')]",
-                "branch": "[parameters('branch')]",
-                "IsManualIntegration": true
-            }
-        }]
-    }]
+        }
+        ]
   }
 }
